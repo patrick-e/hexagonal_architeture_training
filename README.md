@@ -1,4 +1,4 @@
-Aqui está o **README.md** sem emojis e com um tom mais sério:  
+
 
 ```markdown
 # DevMatch - Plataforma de Conexão entre Empresas e Desenvolvedores  
