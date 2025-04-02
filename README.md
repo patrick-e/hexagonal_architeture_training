@@ -18,17 +18,24 @@ DevMatch é uma plataforma que conecta empresas e desenvolvedores com base em su
 ## Estrutura do Projeto  
 ```bash
 /meu_projeto
-│── /app
-│   ├── /core          # Domínio e casos de uso
-│   │   ├── entities   # Entidades (Developer, Company, Job)
-│   │   ├── services   # Regras de negócio (Match de devs e vagas)
-│   │   ├── repository # Interface de acesso a dados (ABC)
-│   ├── /adapters      # Implementações concretas (SQLAlchemy, AWS)
-│   ├── /api           # FastAPI Endpoints
-│   ├── /infra         # Configuração (Banco, Celery, Redis)
-│── .env               # Variáveis sensíveis (.gitignore recomendado)
-│── docker-compose.yml # Configuração para rodar localmente
-│── requirements.txt   # Dependências do projeto
+│─/app
+├── core
+│   ├── entities       # Entidades do domínio (Developer, Company, Job)
+│   ├── services       # Casos de uso e regras de negócio
+│   ├── repository     # Interfaces (ex.: IDeveloperRepository)
+│   └── exceptions     # Exceções específicas do domínio
+├── adapters
+│   ├── repositories   # Implementações concretas (ex.: SQLAlchemyRepository)
+│   ├── aws            # Integrações com AWS (ex.: S3, SNS)
+│   └── notifications  # Implementações de notificações (ex.: Celery)
+├── api
+│   ├── routes         # Endpoints FastAPI
+│   ├── schemas        # Schemas Pydantic para entrada/saída
+│   └── dependencies   # Dependências injetadas (ex.: repositórios)
+├── infra
+│   ├── database.py    # Configuração do banco de dados
+│   ├── celery.py      # Configuração do Celery
+│   └── settings.py    # Configurações gerais (ex.: leitura do .env)
 ```
 
 ## Como Rodar o Projeto  
