@@ -82,5 +82,3 @@ pytest
 ## Licença  
 Este projeto está sob a licença MIT.  
 ```
-
-Agora o README está direto ao ponto, bem estruturado e sem emojis. Alguma outra coisa que gostaria de ajustar?

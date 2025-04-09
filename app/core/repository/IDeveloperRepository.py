@@ -7,5 +7,6 @@ class IDeveloperRepository(ABC):
     def save(self,developer:Developer) -> Developer:
         pass
 
+    @abstractmethod
     def find_by_id(self,developer_id:int) -> Developer:
         pass
