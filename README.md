@@ -78,7 +78,12 @@ Para rodar os testes automatizados:
 ```bash
 pytest
 ```
-
+## Exemplo de uso no terminal
+Para utilizar o codigo via terminal:
+```bash
+curl -X POST -H "Content-Type: application/json" \
+-d '{"name": "joseph", "skills": ["python"]}' \
+http://localhost:8000/api/v1/developers```
 ## Licença  
 Este projeto está sob a licença MIT.  
 ```
