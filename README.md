@@ -1,6 +1,3 @@
-
-
-```markdown
 # DevMatch - Plataforma de Conexão entre Empresas e Desenvolvedores  
 
 DevMatch é uma plataforma que conecta empresas e desenvolvedores com base em suas habilidades e experiência. O projeto segue a Arquitetura Hexagonal para garantir desacoplamento e flexibilidade.  
@@ -78,6 +75,36 @@ Para rodar os testes automatizados:
 ```bash
 pytest
 ```
+
+## LocalStack - Simulação de AWS Localmente
+
+O LocalStack é usado para simular serviços da AWS localmente, como S3, SNS, Lambda, entre outros. Ele é configurado no `docker-compose.yml` e pode ser acessado no endpoint `http://127.0.0.1:4566`.
+
+### 1. Instalar o AWS CLI
+Caso ainda não tenha o AWS CLI instalado, use o seguinte comando:
+```bash
+sudo snap install aws-cli --classic
+```
+
+## configuração do aws-cli para o projeto
+```bash
+aws configure
+```
+
+- **Access Key ID**: `test` (padrão do LocalStack)
+- **Secret Access Key**: `test` (padrão do LocalStack)
+- **Default region**: `us-east-1` (ou a região que você configurou no `docker-compose.yml`)
+- **Output format**: `json`
+
+---
+
+### **4. Teste a Conexão com o LocalStack**
+O LocalStack usa o endpoint `http://127.0.0.1:4566` para todos os serviços simulados. Sempre que usar o AWS CLI, adicione o parâmetro `--endpoint-url` para apontar para o LocalStack.
+
+#### **Exemplo: Criar um bucket no S3**
+```bash
+aws --endpoint-url=http://127.0.0.1:4566 s3 mb s3://meu-bucket
+```
 ## Exemplo de uso no terminal
 Para utilizar o codigo via terminal:
 ```bash
@@ -86,4 +113,3 @@ curl -X POST -H "Content-Type: application/json" \
 http://localhost:8000/api/v1/developers```
 ## Licença  
 Este projeto está sob a licença MIT.  
-```

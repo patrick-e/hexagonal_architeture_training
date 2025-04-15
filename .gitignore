@@ -1,4 +1,8 @@
-/env
+/venv
+
 .env
 
 /volume
+
+/__pycache__
+
